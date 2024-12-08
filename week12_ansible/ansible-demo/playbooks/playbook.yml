@@ -1,0 +1,10 @@
+# 각 서버에 접속하여 여러대의 vm에 반복작업을 실행시킬 수 있음
+
+- name: apt update
+  hosts: local
+  become: true
+  tasks:
+    - name: apt
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: dist
