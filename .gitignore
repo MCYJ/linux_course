@@ -144,3 +144,51 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 node_modules/
+
+# Created by https://www.toptal.com/developers/gitignore/api/ansible
+# Edit at https://www.toptal.com/developers/gitignore?templates=ansible
+
+### Ansible ###
+# Ignore inventory files with sensitive information
+inventory/*
+
+# Allow specific inventory files if needed
+!inventory/hosts
+!inventory/staging
+
+# Ignore sensitive variables files
+vars/*.yml
+!vars/common.yml  # Allow sharing common variables if no sensitive data included
+
+# Ignore Ansible Vault encrypted files
+*.vault
+
+# Ignore retry files created by failed Ansible runs
+*.retry
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore cache directories or temporary data
+.cache/
+*.pyc
+__pycache__/
+
+# Ignore role dependencies installed by ansible-galaxy
+roles/requirements.yml
+roles/*/meta/.galaxy_install_info
+
+# Ignore environment-specific configuration files
+env/
+.env
+
+# Ignore files created by editors or IDEs
+*.idea/
+*.vscode/
+*.DS_Store
+
+# Ignore testing artifacts
+test-output/
