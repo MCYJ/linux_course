@@ -27,6 +27,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Debug Directory Structure
+      run: |
+        pwd
+        ls -R
 
     - name: Install Dependencies
       run: npm ci --prefix linux_course/linux_course/week14_cicd
