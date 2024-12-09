@@ -27,12 +27,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
     - name: Install Dependencies
-      run: npm ci --prefix week14_cicd
+      run: npm ci --prefix linux_course/linux_course/week14_cicd
 
     - name: Build Project
-      run: npm run build --if-present --prefix week14_cicd
+      run: npm run build --if-present --prefix linux_course/linux_course/week14_cicd
 
     - name: Run Tests
-      run: npm test --prefix week14_cicd
+      run: npm test --prefix linux_course/linux_course/week14_cicd
+
 
